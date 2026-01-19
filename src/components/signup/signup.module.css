@@ -1,0 +1,96 @@
+.form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  margin-bottom: 35px;
+  text-align: center;
+  color: #333;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.radioGroup {
+  margin-bottom: 30px;
+}
+
+.radioLabelContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.genderIcon {
+  color: #868e96;
+  font-size: 1rem;
+}
+
+.radioLabel {
+  font-weight: 500;
+  font-size: 14px;
+  color: #333;
+}
+
+.radioLabel::after {
+  content: " *";
+  color: #fa5252;
+}
+
+.radioOptions {
+  display: flex;
+  gap: 20px;
+}
+
+.radioOption {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.radioInput {
+  margin-right: 6px;
+  width: 16px;
+  height: 16px;
+  accent-color: #228be6;
+}
+
+.radioText {
+  font-size: 14px;
+  color: #495057;
+}
+
+.submitButton {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, #228be6, #1c7ed6);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+  letter-spacing: 0.5px;
+}
+
+.submitButton:hover {
+  background: linear-gradient(135deg, #1c7ed6, #1971c2);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(34, 139, 230, 0.3);
+}
+
+.submitButton:active {
+  transform: translateY(0);
+}
+
+.submitButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(34, 139, 230, 0.4);
+}
