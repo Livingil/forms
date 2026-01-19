@@ -1,49 +1,33 @@
-import { useState } from "react";
-
 import "./App.css";
-import { Signin, Signup, type SigninData, type SignupData } from "./components";
+import { CommentsSection } from "./components";
 
 export const App = () => {
-  const [activeForm, setActiveForm] = useState<"signin" | "signup">("signin");
-
-  const handleSigninSubmit = (data: SigninData) => {
-    console.log("Signin данные:", data);
-    alert(`Вход выполнен!\nEmail: ${data.email}`);
-  };
-
-  const handleSignupSubmit = (data: SignupData) => {
-    console.log("Signup данные:", data);
-    alert(
-      `Регистрация успешна!\nИмя: ${data.name}\nНик: ${data.nickname}\nEmail: ${data.email}`,
-    );
-  };
+  const initialComments = [
+    {
+      id: 1,
+      text: "Отличный пост! Спасибо за полезную информацию.",
+      timestamp: new Date("2024-01-18T10:30:00"),
+    },
+    {
+      id: 2,
+      text: "Интересная точка зрения. А есть ли какие-то исследования на эту тему?",
+      timestamp: new Date("2024-01-18T14:45:00"),
+    },
+  ];
 
   return (
     <div className="app">
       <div className="app-container">
-        <div className="tabs">
-          <button
-            className={`tab ${activeForm === "signin" ? "active" : ""}`}
-            onClick={() => setActiveForm("signin")}
-          >
-            Вход
-          </button>
-          <button
-            className={`tab ${activeForm === "signup" ? "active" : ""}`}
-            onClick={() => setActiveForm("signup")}
-          >
-            Регистрация
-          </button>
-        </div>
+        <h1>Демонстрация хуков useOptimistic и useActionState</h1>
+        <p className="subtitle">
+          Комментарии добавляются оптимистично, затем синхронизируются с
+          сервером
+        </p>
 
-        <div className="form-container">
-          {activeForm === "signin" ? (
-            <Signin onSubmit={handleSigninSubmit} />
-          ) : (
-            <Signup onSubmit={handleSignupSubmit} />
-          )}
-        </div>
+        <CommentsSection initialComments={initialComments} />
       </div>
     </div>
   );
 };
+
+export default App;
